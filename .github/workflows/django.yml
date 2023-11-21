@@ -26,4 +26,4 @@ jobs:
       - name: Run Django Tests
         run: |
           # Change to the directory where manage.py is located
-          python manage.py runserver
+          python manage.py test
