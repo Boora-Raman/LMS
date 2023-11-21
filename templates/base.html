@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library Management{% endblock title %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}"/>
+    <style>
+
+        /* Add more styles as needed */
+    </style>
+    <link rel="stylesheet" {% block stylesheet %} {% endblock stylesheet %}/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="circle">
+            <img src="{% static 'poseidon_logo.png' %}" alt="Hotel logo">
+        </div>
+        <ul class="navbar-list">
+            <li class="navbar-item"><a href="/">Library Management</a></li>
+            <li class="navbar-item"><a href="/">HOME</a></li>
+            <li class="navbar-item"><a href="/about">ABOUT</a></li>
+            <li class="navbar-item"><a href="/contact">CONTACT US</a></li>
+          
+            <li class="navbar-item"><a href="/book_list">BOOKS</a></li>
+          
+            {% if user.is_authenticated %}
+                <!-- Button with person icon -->
+                <li class="navbar-item"><a href="/logout" class="highlighted">Log Out</a></li>
+            {% else %}
+                <!-- Sign In link for non-authenticated users -->
+                <li class="navbar-item"><a href="/signin" class="highlighted">SIGN IN</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="content">
+        {% block body %}
+        {% endblock body %}
+    </div>
+    <script>
+        {% block script %}
+        {% endblock script %}
+    </script>
+</body>
+</html>

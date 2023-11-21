@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+Sign In | Tour De Atlantis
+{% endblock title %}
+
+
+
+{% block stylesheet%}
+href="{% static 'css/login.css' %}" 
+{% endblock stylesheet %}
+
+
+
+{% block body %}
+
+<!-- Alert fix it -->
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert" style="color:rgb(208, 145, 38)">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+
+</section>
+
+<br><br>
+
+<form method="post" action="/signin">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <div class="text">
+        <input type="text" name="username" placeholder="Username"> 
+    </div>
+    <div class="text">
+        <input type="text" name="password" placeholder="Password">
+    </div>
+    <input type="submit" value="Login" class="login">
+    <br><br>
+    <div class="su">
+        Don't have an account?
+        </br>
+        <a href="/signup">Sign up</a>
+    </div>
+</form>
+
+{% endblock body %}
+
+{% block script %}
+
+{% endblock script %}
+

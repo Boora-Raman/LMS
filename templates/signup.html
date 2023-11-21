@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Sign Up | Tour De Atlantis
+{% endblock title %}
+
+
+{% block stylesheet%}
+href="{% static 'css/signup.css' %}" 
+{% endblock stylesheet %}
+
+
+
+
+{% block body %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="text" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color:rgb(208, 145, 38)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+</section>
+<br><br>
+
+
+
+
+<form method="post" action="/signup">
+    {% csrf_token %}
+    <h1>REGISTER</h1>
+    <div class="text">
+        <input type="text" name="name" placeholder="Name"> 
+    </div>
+    <div class="text">
+        <input type="text" name="email" placeholder="Email"> 
+    </div>
+    <div class="text">
+        <input type="text" name="password" placeholder="Password">
+    </div>
+    <input type="submit" value="Register" class="login">
+    <br><br>
+    <div class="su">
+        Already have an account?
+    </br>
+    <a href="/signin">Log in</a>
+</div>
+</form>
+{% endblock body %}

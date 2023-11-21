@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Book List
+{% endblock title %}
+
+{% block stylesheet %}
+href="{% static 'css/books.css' %}"
+{% endblock stylesheet %}
+
+
+
+{% block body %}
+
+<div class="container">
+    
+    <div id="container">
+        <div id="user-details">
+            <!-- User details go here -->
+        </div>
+        
+        <div id="borrowed-books">
+            <h2>Book List</h2>
+            <table>
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Publication Date</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publication_date }}</td>
+                    <td>{{ book.description }}</td>
+                    <td><a href="/">Purchase</a></td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+{% endblock body %}
+
+
