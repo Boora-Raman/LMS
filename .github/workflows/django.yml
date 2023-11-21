@@ -21,10 +21,9 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          cd LMS
           pip install -r requirements.txt  # Assuming your requirements are in the project root
 
       - name: Run Django Tests
         run: |
-          cd LMS  # Change to the directory where manage.py is located
+          # Change to the directory where manage.py is located
           python manage.py runserver
