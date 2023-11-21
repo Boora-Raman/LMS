@@ -1,0 +1,38 @@
+.container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Updated to column */
+    justify-content: space-between;
+    /* align-items: center; Center items horizontally */
+}
+
+h2 {
+    text-align: center;
+}
+
+#user-details {
+    margin: 20px; /* Adjust margin as needed */
+}
+
+#borrowed-books {
+    margin: 20px; /* Adjust margin as needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: rgb(3, 2, 2);
+}
+
+
+th, td {
+    border: 1px solid #54838bcb; 
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #a0dad0;
+}
