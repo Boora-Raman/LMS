@@ -22,7 +22,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           cd LMS
-          pip install requirements.txt  # Assuming your requirements are in the project root
+          pip install -r requirements.txt  # Assuming your requirements are in the project root
 
       - name: Run Django Tests
         run: |
